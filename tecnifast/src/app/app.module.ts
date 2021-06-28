@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+<<<<<<< HEAD
 import { AppRoutingModule } from './app-routing.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -23,6 +24,14 @@ import { InformationComponent } from './pages/information/information.component'
     HeaderComponent,
     FooterComponent,
     InformationComponent
+=======
+import { HomeComponent } from './home/home.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent
+>>>>>>> 4fd66725ac28da3793bd9c09585b37549bdc8673
   ],
   imports: [
     BrowserModule,
