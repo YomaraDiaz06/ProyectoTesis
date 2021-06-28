@@ -1,0 +1,13 @@
+
+.container{
+    background-color: #f6f6f6;
+    margin: 2rem;
+    padding: 2rem;
+    
+    /* IMPORTANTE */
+    text-align: left;
+  }
+  
+  .btn{
+  background-color: FB743E;
+  }
