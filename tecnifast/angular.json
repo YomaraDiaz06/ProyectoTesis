@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tecnifast": {
+    "angular-tecnifastweb": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tecnifast",
+            "outputPath": "dist/angular-tecnifastweb",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,9 +30,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js"
+              
+            ]
           },
           "configurations": {
             "production": {
@@ -68,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "tecnifast:build:production"
+              "browserTarget": "angular-tecnifastweb:build:production"
             },
             "development": {
-              "browserTarget": "tecnifast:build:development"
+              "browserTarget": "angular-tecnifastweb:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tecnifast:build"
+            "browserTarget": "angular-tecnifastweb:build"
           }
         },
         "test": {
@@ -102,5 +110,5 @@
       }
     }
   },
-  "defaultProject": "tecnifast"
+  "defaultProject": "angular-tecnifastweb"
 }
