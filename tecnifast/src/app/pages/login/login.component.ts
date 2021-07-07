@@ -29,7 +29,12 @@ export class LoginComponent implements OnInit {
     let {usuarioF,passwordF} = this.myFormUser.value;
     this.servicesAuth.login(usuarioF,passwordF);
     console.log(usuarioF);
+    this.router.navigate(['/information'])
     
+  }
+
+  goRegister(){
+    this.router.navigate(['/register'])
   }
 
 }
