@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   constructor(private serviceauth:FirebaseauthService) { }
 
   ngOnInit(): void {
-    try{
+    /*try{
       this.serviceauth.getCurrentUser().then(r=>{
       
 
@@ -25,12 +25,14 @@ export class HeaderComponent implements OnInit {
      })
     }catch(error){
       console.log(error);
-    }
+    }*/
   }
 
   Onlogout(){
 
     this.serviceauth.logout();
   }
+
+  
 
 }
