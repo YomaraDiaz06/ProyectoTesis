@@ -7,7 +7,7 @@ import { InformationComponent } from './pages/information/information.component'
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { PagesComponent } from './pages/pages.component';
 import { ContactanosComponent } from './pages/contactanos/contactanos.component';
-
+import { PostulationtechnicalComponent } from './pages/postulationtechnical/postulationtechnical.component';
 
 const routes: Routes = [
 
@@ -22,7 +22,7 @@ const routes: Routes = [
     {path: 'contactanos', component:ContactanosComponent},
     {path: 'soluciones', component:InformationComponent},
     {path: 'trabaja-nosotros', component:InformationComponent},
-
+    {path: 'postulationtechnical',component:PostulationtechnicalComponent}
     ],
 
 
