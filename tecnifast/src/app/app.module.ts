@@ -17,7 +17,8 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { HeaderModule } from './componentes/header/header.module';
 import { InformationComponent } from './pages/information/information.component';
 import { FooterModule } from './componentes/footer/footer.module';
-import { SolucionesComponent } from './page/soluciones/soluciones.component';
+import { PostulationtechnicalComponent } from './pages/postulationtechnical/postulationtechnical.component';
+//import { SolucionesComponent } from './page/soluciones/soluciones.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SolucionesComponent } from './page/soluciones/soluciones.component';
     HeaderComponent,
     FooterComponent,
     InformationComponent,
-    SolucionesComponent
+    PostulationtechnicalComponent,
+    //SolucionesComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { SolucionesComponent } from './page/soluciones/soluciones.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     HeaderModule,
-    FooterModule
+    FooterModule,
+    
     
   ],
   providers: [AngularFirestore],
