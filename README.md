@@ -1,6 +1,7 @@
 # Proyectotecnifastweb
 #<h1><b>PROYECTO TESIS</b></h1>
 Adjunto link del FrondEnd https://github.com/elvis926/pry_titulacion.git
+<br>
 El siguiente video es explicativo, para llevar un control del avance del proyecto de titulación TecniFast https://youtu.be/HaQZENPNRNU
 <br>
 La documentacion se encuentra en el directorio Documentaicon en este repositorio 
