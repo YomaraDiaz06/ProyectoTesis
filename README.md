@@ -17,7 +17,7 @@ La siguiente imagen muestra los datos generados por el API de laravel y que sera
 <br>
 ![imagen](https://user-images.githubusercontent.com/55716749/127091428-2bdc6881-52a2-4aac-8666-c570daac51ab.png)
 
-#<b>Módulos de la aplicación</b>
+<h2><b>Módulos de la aplicación</b></h2>
 
 <b>Inicio de sesión</b>
 
