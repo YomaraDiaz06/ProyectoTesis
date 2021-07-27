@@ -2,6 +2,7 @@
 #<h1><b>PROYECTO TESIS</b></h1>
 El siguiente video es explicativo, para llevar un control del avance del proyecto de titulación TecniFast https://youtu.be/HaQZENPNRNU
 <br>
+La documentacion se encuentra en el directorio Documentaicon en este repositorio 
 <br>
 <b>Burndown Chart</b>
 <br>
