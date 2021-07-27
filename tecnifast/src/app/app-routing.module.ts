@@ -8,7 +8,8 @@ import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { PagesComponent } from './pages/pages.component';
 import { ContactanosComponent } from './pages/contactanos/contactanos.component';
 import { PostulationtechnicalComponent } from './pages/postulationtechnical/postulationtechnical.component';
-
+import { Services1Component } from './pages/services1/services1.component';
+import { SolutionsComponent } from './pages/solutions/solutions.component';
 const routes: Routes = [
 
   
@@ -18,9 +19,9 @@ const routes: Routes = [
   { path:'', component:PagesComponent,
   children:[
     {path: 'information', component:InformationComponent},
-    {path: 'servicios', component:ServiciosComponent},
+    {path: 'servicios', component:Services1Component},
     {path: 'contactanos', component:ContactanosComponent},
-    {path: 'soluciones', component:InformationComponent},
+    {path: 'soluciones', component:SolutionsComponent},
     {path: 'trabaja-nosotros', component:InformationComponent},
     {path: 'postulationtechnical',component:PostulationtechnicalComponent}
     ],
