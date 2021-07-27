@@ -11,6 +11,10 @@ Actualmente el proyecto esta en desarrollo, actualmente se encuentra hasta el sp
 ![imagen](https://user-images.githubusercontent.com/55716749/127089162-73f6988e-8991-4b84-b656-e3f6165606cf.png)
 <br>
 <br>
+
+<h2><b>Extructura y arquitectura</b></h2>
+
+los datos almacenados en MySQL muestran la siguiente extructura
 ![imagen](https://user-images.githubusercontent.com/55716749/127091428-2bdc6881-52a2-4aac-8666-c570daac51ab.png)
 
 <h2><b>Módulos de la aplicación</b></h2>
