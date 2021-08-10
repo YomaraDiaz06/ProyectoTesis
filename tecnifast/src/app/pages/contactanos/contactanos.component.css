@@ -1,12 +1,45 @@
+
+.tittle{
+  text-align: center;
+  
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px !important;
+  
+  color: rgba(60, 180, 172, 0.58);
+}
+.tittle1{
+  font-weight: bold;
+}
 .container{
-    background-color: #f6f6f6;
-    margin: 2rem;
-    padding: 2rem;
-    
-    /* IMPORTANTE */
-    text-align: left;
+  width: 1200px;       
+  height: 600px;
+  margin: 0 auto;
+  font-family: Roboto;
+  font-size: 20px;
   }
+
+  .container1{
+    display: inline-block;
+    padding: 10px;
+    }
   
   .btn{
-  background-color: FB743E;
+  background-color: #FB743E !important;
+  }
+
+  .whatsapp , .llamada{
+    margin: 0 auto !important;
+    display: inline-block;
+    padding: 10px;
+    width: 330px;
+    height: 85px;
+    background: #C4C4C4;
+    border-radius: 50px;
+    text-align: center;
+  }
+
+
+  .form-control{
+    background: #C4C4C4 !important;
   }
