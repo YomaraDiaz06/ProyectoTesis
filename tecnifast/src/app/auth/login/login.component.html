@@ -1,0 +1,92 @@
+<body>
+    <div class="container">
+  
+      <!-- Outer Row -->
+      <div class="row justify-content-center">
+  
+        <div class="col-xl-10 col-lg-12 col-md-9">
+  
+          <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+              <!-- Nested Row within Card Body -->
+              <div class="row">
+                <div class="col-lg-6 d-none d-lg-block  ">
+                  <img src="/assets/imagenes/background/login.jpg" alt="">
+  
+                </div>
+                <div class="col-lg-6">
+                  <div class="p-5">
+                    <div class="text-center">
+                      <h1 class="h4 text-gray-900 mb-4">Bienvenido a PRESTO</h1>
+                    </div>
+                    <form [formGroup]="myFormUser" (ngSubmit)="loginUser()">
+                      <h3 class="box-title m-b-20">Iniciar Sesión</h3>
+                      <div class="form-group">
+                        <div class="col-xs-12">
+                          <label for="exampleInputEmail1">Email</label>
+                          <input type="email" class="form-control" required="true" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" formControlName="usuarioF">
+  
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-xs-12">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input class="form-control" type="password" required="true" formControlName="passwordF">
+  
+                        </div>
+                      </div>
+                      <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-ingresar mt-4">
+                          <h6><strong>Ingresar</strong></h6>
+                        </button>
+  
+                        <!-- <button type="submit" class=" btn btn-danger"  >
+                                        <img src="../assets/imagenes/google-icon.png">
+                                            <span class="btn-inner--text"> Google</span>
+                                      </button> -->
+                      </div>
+                      <br>
+                      <!--  <div class="form-group m-b-0">
+                                      <div class="col-sm-12 text-center">
+                                          No tienes cuenta aún? <a routerLink="/register" class="text-info m-l-5"><b>Registrarse</b></a>
+                                      </div>
+                                  </div> -->
+                      <div class="form-group m-b-0">
+                        <div class="col-sm-12 text-center">
+                          <a class="text-info m-l-5" type="button" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"><b>Olvidaste tu Contraseña? </b></a>
+                        </div>
+                      </div>
+                    </form>
+                    <hr>
+  
+                    <div class="text-center">
+                      <a class="small" routerLink="/register" class="text-info m-l-5"><b>Crear cuenta!</b> </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  
+  
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Recuperar Contraseña</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </body>
+  

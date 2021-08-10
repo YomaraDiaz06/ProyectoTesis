@@ -1,0 +1,73 @@
+<body>
+    <div class="container">
+  
+      <!-- Outer Row -->
+      <div class="row justify-content-center">
+  
+        <div class="col-xl-10 col-lg-12 col-md-9">
+  
+          <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+              <!-- Nested Row within Card Body -->
+              <div class="row">
+                <div class="col-lg-6 d-none d-lg-block  ">
+                  <video width="480" height="100%" controls autoplay loop>
+                    <source src="/assets/videos/tecnifast.mp4" type="video/mp4">
+                  </video>
+  
+                </div>
+                <div class="col-lg-6">
+                  <div class="p-5">
+                    <div class="text-center">
+                      <h1 class="h4 text-gray-900 mb-4">Bienvenido a TECNIFAST</h1>
+                    </div>
+                    <form [formGroup]="signUpForm" (ngSubmit)="register()">
+                      <h3 class="box-title m-b-20">Registro de usuario</h3>
+                      <div class="form-group">
+                        <div class="col-xs-12">
+                          <input class="form-control mb-2" type="email" required="true" placeholder="Email"
+                            formControlName="emailF">
+  
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <div class="col-xs-12">
+                          <input class="form-control mb-2" type="password" required="true" placeholder="Contraseña"
+                            formControlName="passwordF" minlength="6">
+  
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <div class="col-xs-12">
+                          <input class="form-control mb-2" type="password" required="true"
+                            placeholder="Repita su Contraseña" formControlName="password" minlength="6">
+  
+                        </div>
+                      </div>
+  
+                      <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary mt-4 btn-registrarse">
+                          <h6><strong>Registrarse</strong></h6>
+                        </button>
+                      </div>
+                      <br>
+                    </form>
+                    <hr>
+  
+                    <div class="text-center">
+                      <a class="small" routerLink="/login" class="text-info m-l-5"><b>Iniciar Sesión!</b></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </body>
+  

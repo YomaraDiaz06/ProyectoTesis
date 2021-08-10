@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -21,6 +21,8 @@ import { PostulationtechnicalComponent } from './pages/postulationtechnical/post
 import { SolutionsComponent } from './pages/solutions/solutions.component';
 import { Services1Component } from './pages/services1/services1.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 //import { SolucionesComponent } from './page/soluciones/soluciones.component';
 
 
@@ -36,10 +38,13 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
     SolutionsComponent,
     Services1Component,
     NosotrosComponent,
+    LoginComponent,
+    RegisterComponent,
     //SolucionesComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
