@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { FirebaseauthService } from 'src/app/services/firebaseauth.service';
+
+
 
 @Component({
   selector: 'app-login',
@@ -10,7 +13,7 @@ import { FirebaseauthService } from 'src/app/services/firebaseauth.service';
 })
 export class LoginComponent implements OnInit {
 
-  resultado:string | undefined;
+  resultado!: string;
 
 
   myFormUser=new FormGroup({
@@ -19,22 +22,33 @@ export class LoginComponent implements OnInit {
 
   })
 
-  constructor(public servicesAuth:FirebaseauthService, private router:Router) { }
+  private formSubmitAttempt: boolean = false;
+
+  constructor(public servicesauth:FirebaseauthService, private router:Router) { }
 
   ngOnInit(): void {
-
   }
 
-  loginUser(){
+ loginUser(){
+
     let {usuarioF,passwordF} = this.myFormUser.value;
-    this.servicesAuth.login(usuarioF,passwordF);
-    console.log(usuarioF);
-    this.router.navigate(['/information'])
-    
-  }
+    this.servicesauth.login(usuarioF,passwordF)
+    console.log(usuarioF)
 
-  goRegister(){
-    this.router.navigate(['/register'])
   }
+//LOGIN GOOGLE
+ /*  async onLoginGoogle(){
+    try{
+      const user = await this.servicesauth.loginGoogle();
+      if(user){
+        this.router.navigate(['/dashboard'])
+      }
+
+    }catch(error){
+      console.log(error);
+    }
+  } */
+
+  //validacion de campos
 
 }

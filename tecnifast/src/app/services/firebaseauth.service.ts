@@ -34,7 +34,7 @@ private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
 
                   })
                 })
-                this.router.navigate([''])
+                this.router.navigate(['/information'])
 
 
 
@@ -44,14 +44,25 @@ private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
 
 registerUser(email:string, password: string){
   
-  return new Promise<any>((resolve, reject) => {
+  this.fAuth.createUserWithEmailAndPassword(email, password)
+        .then(
+            response => {
+                console.log(response);
+                this.firestore.collection("Usuarios").ref.where("username", "==", response.user?.email).onSnapshot(snap =>{
+                  snap.forEach(userRef =>{
+                    console.log("userRef", userRef.data());
+                    console.log("userRef", userRef.id);
+                    this.currentUser = userRef.data();
 
-    this.fAuth.createUserWithEmailAndPassword(email,password)
-      .then(
-        res => resolve(res),
-        err => reject(err))
-  }
-  )
+
+                  })
+                })
+                this.router.navigate(['/login'])
+
+
+
+            }
+        )
 }
 
 getCurrentUser(){
