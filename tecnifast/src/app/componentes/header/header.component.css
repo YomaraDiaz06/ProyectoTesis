@@ -128,3 +128,6 @@
   color:inherit;
   transition:border-bottom-color 0.3s;
 }
+.imagen{
+  width: 60px !important;
+}
