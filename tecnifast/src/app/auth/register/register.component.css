@@ -1,0 +1,12 @@
+.h4{
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px !important;
+  color: rgba(60, 180, 172, 0.58);
+  margin-top: 25px;
+}
+
+.btn{
+    background-color: #FB743E !important;
+}
