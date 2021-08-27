@@ -10,6 +10,8 @@ import { ContactanosComponent } from './pages/contactanos/contactanos.component'
 import { PostulationtechnicalComponent } from './pages/postulationtechnical/postulationtechnical.component';
 import { Services1Component } from './pages/services1/services1.component';
 import { SolutionsComponent } from './pages/solutions/solutions.component';
+import { WeComponent } from './pages/we/we.component';
+import { UsersComponent } from './pages/users/users.component';
 const routes: Routes = [
 
   
@@ -23,8 +25,18 @@ const routes: Routes = [
     {path: 'contactanos', component:ContactanosComponent},
     {path: 'soluciones', component:SolutionsComponent},
     {path: 'trabaja-nosotros', component:InformationComponent},
-    {path: 'postulationtechnical',component:PostulationtechnicalComponent}
-    ],
+    {path: 'postulationtechnical',component:PostulationtechnicalComponent},
+    {path: 'we',component:WeComponent},
+    {path: 'users',component:UsersComponent},
+    /*{path: 'users',component:UsersComponent
+     ----> usuario 
+   children  [{path: 'users',component:UsersComponent} 
+            {path: 'users',component:UsersComponent} 
+            {path: 'users',component:UsersComponent} 
+            {path: 'users',component:UsersComponent} ,
+     }
+    */
+  ],
 
 
   },
