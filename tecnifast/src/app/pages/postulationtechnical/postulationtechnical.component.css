@@ -1,11 +1,10 @@
 
-.container1 {
-    margin: 0 auto !important;
-    width: 1200px;       
-    
+.card-group{
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .title1{
-text-align: center;
+ text-align: center;
   font-style: normal;
   font-weight: normal;
   font-size: 60px !important;
@@ -13,8 +12,9 @@ text-align: center;
   margin-top: 25px;
 }
 .imagen{
-    
-    width: 70% !important;
+    display:block;
+     margin:auto;
+    width: 50% !important;
     
 }
 
@@ -25,7 +25,25 @@ text-align: center;
     background-color: #C4C4C4;
 }
 .text{
-    font-size: 18px;
+    font-size: 25px;
     
 }
+.card{
+    border: none;
+}
 
+.card-title{
+    text-align: center;
+}
+.title2{
+    text-align: center;
+}
+.card-text{
+    text-align: justify;
+    padding: 20px;
+    font-family: 'Roboto', 20px;
+    line-height : 25px;
+}
+.form-label{
+    font-family: 'Roboto', 20px;
+}
