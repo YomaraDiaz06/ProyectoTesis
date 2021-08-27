@@ -23,6 +23,12 @@ background-color: #FB743E;
   text-align: center;
   font-style: normal;
   font-weight: normal;
-  font-size: 72px !important;
+  font-size: 60px !important;
   color: rgba(60, 180, 172, 0.58);
+}
+.text{
+    text-align: justify;
+    padding: 20px;
+    font-family: 'Roboto', 20px;
+    line-height : 25px;
 }

@@ -1,0 +1,19 @@
+.imagenfooter{
+    display:block;
+     margin:auto;
+     width: 30%;
+            
+    }
+.container4{
+    display:block !important;
+     margin:auto !important;
+     border: none !important;
+}
+.icons{
+    display:block !important;
+     margin:auto !important;
+    color: #C4C4C4 !important;
+}
+.container4{
+    background-color:  #383E56;
+}

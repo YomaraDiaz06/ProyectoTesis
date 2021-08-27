@@ -1,7 +1,6 @@
 
 .tittle{
   text-align: center;
-  
   font-style: normal;
   font-weight: normal;
   font-size: 72px !important;
@@ -19,27 +18,29 @@
   font-size: 20px;
   }
 
-  .container1{
-    display: inline-block;
-    padding: 10px;
+  .card{
+    border: none !important;
+    font-family: Roboto;
+    font-size: 20px;
     }
   
   .btn{
   background-color: #FB743E !important;
   }
+  
 
-  .whatsapp , .llamada{
-    margin: 0 auto !important;
-    display: inline-block;
-    padding: 10px;
-    width: 330px;
-    height: 85px;
-    background: #C4C4C4;
-    border-radius: 50px;
-    text-align: center;
+  .textfooter{
+    text-align: left;
+    color: honeydew;
   }
 
 
   .form-control{
     background: #C4C4C4 !important;
+  }
+
+  .imagen{
+    display:block;
+     margin:auto;
+     width: 80% !important;
   }

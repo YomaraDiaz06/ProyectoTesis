@@ -1,6 +1,26 @@
+
+.tittle{
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px !important;
+    
+    color: rgba(60, 180, 172, 0.58);
+  }
 .imagen{
     display:block !important;
     margin:auto !important;
-    width: 80%;
-    
+    width: 100%;   
+}
+
+.card-title{
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #FB743E;
+}
+
+.card1{
+    background-color: #383E56;
 }
