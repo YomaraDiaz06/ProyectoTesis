@@ -12,9 +12,14 @@
                             <li class="nav-item" role="presentation"><a class="nav-link active" [routerLink]="['/postulationtechnical']">Trabaja con nosotros</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link active" [routerLink]="['/contactanos']">Contactanos</a></li>
                         </ul>
-                        <form class="form-inline mr-auto" target="_self">
-                            <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div>
-                        </form><span class="navbar-text"> <a [routerLink]="['/login']" class="login">Log In</a></span><a class="btn btn-light action-button" role="button" [routerLink]="['/register']">Sign Up</a></div>
+                        <span class="navbar-text"> 
+                            <a class="navbar-brand" routerLink="login" *ngIf="!loggedIn">Login</a>
+                            <a class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a>
+                        </span>
+                        <a class="btn btn-light action-button" role="button" [routerLink]="['/register']">
+                            Sign Up
+                        </a>
+                    </div>
                 </div>
             </nav>
     </div>

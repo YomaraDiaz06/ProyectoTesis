@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { JarwisService } from '../../services/jarwis.service';
+import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
-import { FirebaseauthService, } from 'src/app/services/firebaseauth.service';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-register',
@@ -15,11 +15,18 @@ export class RegisterComponent implements OnInit {
   emailPattern: any = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
   signUpForm = new FormGroup({
-    emailF: new FormControl('',[Validators.required,Validators.pattern(this.emailPattern)]),
-    passwordF: new FormControl('',[Validators.required,Validators.minLength(6)])
+    name: new FormControl('',[Validators.required,Validators.minLength(30)]),
+    email: new FormControl('',[Validators.required,Validators.pattern(this.emailPattern)]),
+    password: new FormControl('',[Validators.required,Validators.minLength(6)]),
+    password_confirmation: new FormControl('',[Validators.required,Validators.minLength(6)]),
+    role: new FormControl('',[Validators.required,Validators.minLength(6)])
   })
+  error: null;
 
-  constructor(private serviceAuth: FirebaseauthService, private router:Router) { }
+  constructor(
+    private Jarwis: JarwisService,
+    private Token: TokenService,
+    private router: Router) { }
 
   ngOnInit(): void {
     
@@ -33,37 +40,20 @@ public signUpForm = new FormGroup({
   
   register(){
 
-    if(this.signUpForm.valid){
-
-    let {emailF,passwordF} = this.signUpForm.value;
-    this.serviceAuth.registerUser(emailF,passwordF);
-
-    }else{
-      console.log("error");
-
-    }
+    this.Jarwis.signup(this.signUpForm).subscribe(
+      data => this.handleResponse(data),
+      error => this.handleError(error)
+    );
 
   } 
 
- /*  async onLoginGoogle(){
-    try{
-      const user = await this.serviceAuth.loginGoogle();
-      if(user){
-        this.router.navigate(['/dashboard'])
-      }
+  handleResponse(data: Object) {
+    this.Token.handle(data.toLocaleString);
+    this.router.navigateByUrl('/information');
+  }
 
-    }catch(error){
-      console.log(error);
-    }
-  } */
-
-  get emailF() {return this.signUpForm.get('emailF')}
-  get passwordF() {return this.signUpForm.get('passwordF')}
-
-  /*registro(){
-    this.signUpForm.reset();
-    this.router.navigate(['/login'])
-  }*/
-
+  handleError(errors: any) {
+    this.error = errors;
+  }
 
 }

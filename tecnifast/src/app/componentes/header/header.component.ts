@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FirebaseauthService } from 'src/app/services/firebaseauth.service';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import { TokenService } from '../../services/token.service';
 
 @Component({
   selector: 'app-header',
@@ -7,30 +9,29 @@ import { FirebaseauthService } from 'src/app/services/firebaseauth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  public loggedIn: boolean = false;
   @Output()
   toggleSidebar = new EventEmitter<void>();
+  isSignedIn: boolean = false;
 
   public showSearch = false;
   usuario: string='';
 
-  constructor(private serviceauth:FirebaseauthService) { }
+  constructor(
+    private Auth: AuthService,
+    private router: Router,
+    private Token: TokenService
+    ) { }
 
   ngOnInit(): void {
-    /*try{
-      this.serviceauth.getCurrentUser().then(r=>{
-      
-
-       console.log(r?.email);
-
-     })
-    }catch(error){
-      console.log(error);
-    }*/
+    this.Auth.authStatus.subscribe(value => this.loggedIn = value);
   }
 
-  Onlogout(){
-
-    this.serviceauth.logout();
+  logout(event: MouseEvent) {
+    event.preventDefault();
+    this.Token.remove();
+    this.Auth.changeAuthStatus(false);
+    this.router.navigateByUrl('/login');
   }
 
   

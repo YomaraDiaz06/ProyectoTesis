@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { JarwisService } from '../../services/jarwis.service';
+import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
-import { FirebaseauthService } from 'src/app/services/firebaseauth.service';
-
-
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,38 +17,42 @@ export class LoginComponent implements OnInit {
 
 
   myFormUser=new FormGroup({
-    usuarioF: new FormControl('',[Validators.required]),
-      passwordF: new FormControl('',[Validators.required])
+    email: new FormControl('',[Validators.required]),
+    password: new FormControl('',[Validators.required])
 
   })
 
   private formSubmitAttempt: boolean = false;
+  errors = null;
+  error: any;
 
-  constructor(public servicesauth:FirebaseauthService, private router:Router) { }
+  constructor(
+    private Jarwis: JarwisService,
+    private Token: TokenService,
+    private router: Router,
+    private Auth: AuthService,){}
 
   ngOnInit(): void {
   }
 
  loginUser(){
-
-    let {usuarioF,passwordF} = this.myFormUser.value;
-    this.servicesauth.login(usuarioF,passwordF)
-    console.log(usuarioF)
-
+  this.Jarwis.login(this.m).subscribe(
+    data => this.handleResponse(data),
+    error => this.handleError(error)
+  );
+     }
+  m(m: any) {
+    throw new Error('Method not implemented.');
   }
-//LOGIN GOOGLE
- /*  async onLoginGoogle(){
-    try{
-      const user = await this.servicesauth.loginGoogle();
-      if(user){
-        this.router.navigate(['/dashboard'])
-      }
 
-    }catch(error){
-      console.log(error);
+  handleResponse(data: Object) {
+      this.Token.handle(data.toLocaleString);
+      this.Auth.changeAuthStatus(true);
+      this.router.navigateByUrl('/profile');
+  }
+  
+    handleError(error: { error: { error: any; }; }) {
+      this.error = error.error.error;
     }
-  } */
-
-  //validacion de campos
-
+ 
 }

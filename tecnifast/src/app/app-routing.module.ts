@@ -12,13 +12,19 @@ import { Services1Component } from './pages/services1/services1.component';
 import { SolutionsComponent } from './pages/solutions/solutions.component';
 import { WeComponent } from './pages/we/we.component';
 import { UsersComponent } from './pages/users/users.component';
+import { BeforeLoginService } from './services/before-login.service';
 const routes: Routes = [
 
   
-  {path: 'login',    component: LoginComponent},
-  {path: 'register',    component: RegisterComponent},
+  {path: 'login',    component: LoginComponent,
+  canActivate: [BeforeLoginService]},
+  {path: 'register',    component: RegisterComponent,
+  canActivate: [BeforeLoginService]
+},
+
+  { path:'', redirectTo: '/information', pathMatch: 'full'},
   
-  { path:'', component:PagesComponent,
+  {path: '',    component: PagesComponent, canActivate: [BeforeLoginService],
   children:[
     {path: 'information', component:InformationComponent},
     {path: 'servicios', component:Services1Component},
@@ -28,14 +34,6 @@ const routes: Routes = [
     {path: 'postulationtechnical',component:PostulationtechnicalComponent},
     {path: 'we',component:WeComponent},
     {path: 'users',component:UsersComponent},
-    /*{path: 'users',component:UsersComponent
-     ----> usuario 
-   children  [{path: 'users',component:UsersComponent} 
-            {path: 'users',component:UsersComponent} 
-            {path: 'users',component:UsersComponent} 
-            {path: 'users',component:UsersComponent} ,
-     }
-    */
   ],
 
 
