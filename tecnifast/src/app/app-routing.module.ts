@@ -12,6 +12,7 @@ import { Services1Component } from './pages/services1/services1.component';
 import { SolutionsComponent } from './pages/solutions/solutions.component';
 import { WeComponent } from './pages/we/we.component';
 import { UsersComponent } from './pages/users/users.component';
+import { SibebarComponent } from './componentes/sibebar/sibebar.component';
 const routes: Routes = [
 
   
@@ -28,12 +29,13 @@ const routes: Routes = [
     {path: 'postulationtechnical',component:PostulationtechnicalComponent},
     {path: 'we',component:WeComponent},
     {path: 'users',component:UsersComponent},
+    {path: 'sibebar',component:SibebarComponent},
     /*{path: 'users',component:UsersComponent
      ----> usuario 
    children  [{path: 'users',component:UsersComponent} 
             {path: 'users',component:UsersComponent} 
             {path: 'users',component:UsersComponent} 
-            {path: 'users',component:UsersComponent} ,
+            {path: 'users',component:UsersComponent},
      }
     */
   ],

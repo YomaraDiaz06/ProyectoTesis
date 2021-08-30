@@ -23,6 +23,7 @@ import { Services1Component } from './pages/services1/services1.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { SibebarComponent } from './componentes/sibebar/sibebar.component';
 //import { SolucionesComponent } from './page/soluciones/soluciones.component';
 
 
@@ -40,6 +41,7 @@ import { RegisterComponent } from './auth/register/register.component';
     NosotrosComponent,
     LoginComponent,
     RegisterComponent,
+    SibebarComponent,
     //SolucionesComponent
   ],
   imports: [
