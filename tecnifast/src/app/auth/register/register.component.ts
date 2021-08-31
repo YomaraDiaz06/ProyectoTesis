@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FirebaseauthService, } from 'src/app/services/firebaseauth.service';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -15,55 +14,35 @@ export class RegisterComponent implements OnInit {
   emailPattern: any = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
   signUpForm = new FormGroup({
-    emailF: new FormControl('',[Validators.required,Validators.pattern(this.emailPattern)]),
-    passwordF: new FormControl('',[Validators.required,Validators.minLength(6)])
+    name: new FormControl('',[Validators.required,Validators.minLength(30)]),
+    email: new FormControl('',[Validators.required,Validators.pattern(this.emailPattern)]),
+    password: new FormControl('',[Validators.required,Validators.minLength(6)]),
+    password_confirmation: new FormControl ('',[Validators.required,Validators.minLength(6)]),
+    role: new FormControl('ROLE_CLIENTE',[Validators.required])
   })
-
-  constructor(private serviceAuth: FirebaseauthService, private router:Router) { }
+  errors = null;
+  constructor(
+    private router:Router,
+    public authService: AuthService) { }
 
   ngOnInit(): void {
     
   }
-/*REGISTRO
-public signUpForm = new FormGroup({
-  email: new FormControl('',  Validators.required),
-  password: new FormControl('',  Validators.required),
-});*/
-
-  
+ 
   register(){
 
-    if(this.signUpForm.valid){
-
-    let {emailF,passwordF} = this.signUpForm.value;
-    this.serviceAuth.registerUser(emailF,passwordF);
-
-    }else{
-      console.log("error");
-
-    }
+    this.authService.register(this.signUpForm.value).subscribe(
+      result => {
+        console.log(result)
+      },
+      error => {
+        this.errors = error.error;
+      },
+      () => {
+        this.signUpForm.reset()
+        this.router.navigate(['/login']);
+      }
+    )
 
   } 
-
- /*  async onLoginGoogle(){
-    try{
-      const user = await this.serviceAuth.loginGoogle();
-      if(user){
-        this.router.navigate(['/dashboard'])
-      }
-
-    }catch(error){
-      console.log(error);
-    }
-  } */
-
-  get emailF() {return this.signUpForm.get('emailF')}
-  get passwordF() {return this.signUpForm.get('passwordF')}
-
-  /*registro(){
-    this.signUpForm.reset();
-    this.router.navigate(['/login'])
-  }*/
-
-
 }
