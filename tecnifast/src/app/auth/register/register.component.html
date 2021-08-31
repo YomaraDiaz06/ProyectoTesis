@@ -25,22 +25,27 @@
                       <h3 class="box-title m-b-20">Registro de usuario</h3>
                       <div class="form-group">
                         <div class="col-xs-12">
+                          <input class="form-control mb-2" type="text" required="true" placeholder="Nombre"
+                            formControlName="name">
+  
+                        </div>
+                        <div class="col-xs-12">
                           <input class="form-control mb-2" type="email" required="true" placeholder="Email"
-                            formControlName="emailF">
+                            formControlName="email">
   
                         </div>
                       </div>
                       <div class="form-group ">
                         <div class="col-xs-12">
                           <input class="form-control mb-2" type="password" required="true" placeholder="Contraseña"
-                            formControlName="passwordF" minlength="6">
+                            formControlName="password" minlength="6">
   
                         </div>
                       </div>
                       <div class="form-group ">
                         <div class="col-xs-12">
                           <input class="form-control mb-2" type="password" required="true"
-                            placeholder="Repita su Contraseña" formControlName="password" minlength="6">
+                            placeholder="Repita su Contraseña" formControlName="password_confirmation" minlength="6">
   
                         </div>
                       </div>

@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FirebaseauthService } from 'src/app/services/firebaseauth.service';
 
 @Component({
   selector: 'app-header',
@@ -13,26 +12,10 @@ export class HeaderComponent implements OnInit {
   public showSearch = false;
   usuario: string='';
 
-  constructor(private serviceauth:FirebaseauthService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    /*try{
-      this.serviceauth.getCurrentUser().then(r=>{
-      
-
-       console.log(r?.email);
-
-     })
-    }catch(error){
-      console.log(error);
-    }*/
-  }
-
-  Onlogout(){
-
-    this.serviceauth.logout();
-  }
-
-  
+    
+  }  
 
 }
