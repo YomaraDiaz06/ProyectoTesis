@@ -1,0 +1,53 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>TECNI FAST</h3>
+        </div>
+
+        <!--Sidebar administrador-->
+        <ul class="list-unstyled components" *ngIf="user.role=='ROLE_ADMIN'">
+            <li><a [routerLink]="['perfil']" routerLinkActive="activo" >
+                <i class="fas fa-fw fa-user"></i>Perfil
+              </a></li>
+            <li><a >Cliente</a></li>
+            <li>
+              <a >
+                <i class="fas fa-fw fa-cog"></i>Proyectos
+              </a>
+            </li>
+        </ul>
+
+         <!--Sidebar cliente-->
+         <ul class="list-unstyled components" *ngIf="user.role=='ROLE_CLIENTE'">
+            <li><a [routerLink]="['resume']" routerLinkActive="activo" >
+                <i class="fas fa-fw fa-user"></i>Perfil
+              </a></li>
+            <li><a >Cliente</a></li>
+            <li>
+              <a >
+                <i class="fas fa-fw fa-cog"></i>Proyectos
+              </a>
+            </li>
+        </ul>
+
+         <!--Sidebar Tecnico-->
+         <ul class="list-unstyled components" *ngIf="user.role=='ROLE_TECNICO'">
+            <li><a [routerLink]="['perfil']" routerLinkActive="activo" >
+                <i class="fas fa-fw fa-user"></i>Perfil
+              </a>
+            </li>
+            <ul>
+
+            </ul>
+
+        </ul>
+
+    </nav>
+
+     <!-- Page Content  -->
+    <div id="content" class="p-4 ">
+        <br>
+        <router-outlet></router-outlet>
+    </div>
+</div>
