@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
-import {RouterTestingModule} from '@angular/router/testing';
 
 @Component({
   selector: 'app-login',

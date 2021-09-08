@@ -13,6 +13,8 @@ import { SolutionsComponent } from './pages/solutions/solutions.component';
 import { WeComponent } from './pages/we/we.component';
 import { UsersComponent } from './pages/users/users.component';
 import { SidebarComponent } from './componentes/sidebar/sidebar.component';
+import { PostulacionesComponent } from './pages/postulaciones/postulaciones.component';
+import { ListCommentsComponent } from './pages/list-comments/list-comments.component';
 const routes: Routes = [
 
   
@@ -24,7 +26,7 @@ const routes: Routes = [
   { path:'', component:PagesComponent,
   children:[
     {path: 'information', component:InformationComponent},
-    {path: 'servicios', component:Services1Component},
+   // {path: 'servicios', component:Services1Component},
     {path: 'contactanos', component:ContactanosComponent},
     {path: 'soluciones', component:SolutionsComponent},
     {path: 'trabaja-nosotros', component:InformationComponent},
@@ -34,6 +36,10 @@ const routes: Routes = [
     {path: 'perfil',component:SidebarComponent, 
       children:[
         {path: 'resume',component:UsersComponent},
+        {path: 'servicios', component:Services1Component},
+        {path: 'postulaciones',component:PostulacionesComponent},
+        {path: 'miscomentarios', component:ListCommentsComponent}
+
 
     ],}
     
