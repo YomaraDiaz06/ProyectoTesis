@@ -1,0 +1,28 @@
+<p>postulaciones works!</p>
+<button (click)="solicitudSinAsig()">listado</button>
+
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>Descripción</th>
+            <th>Descripción del problema</th>
+            <th>Acciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let  sol of solicitudes">
+            <td>{{sol.rows}}</td>
+            <td>{{sol.descripcionPC}}</td>
+            <td>{{sol.descripcion}}</td>
+              <td class="bnt-group d-none d-sm-block" role="group">
+                <button type="button" class="btn btn-success m-1">Postular</button>
+                <button type="button" class="btn btn-danger m-1" >Ignorar</button>
+              </td>
+
+
+        </tr>
+
+    </tbody>
+</table>

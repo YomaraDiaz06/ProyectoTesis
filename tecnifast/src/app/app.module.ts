@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PagesComponent } from './pages/pages.component';
@@ -21,6 +20,11 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { SidebarComponent } from './componentes/sidebar/sidebar.component';
+import { ListUsersComponent } from './pages/list-users/list-users.component';
+import { RegisterTecnicoComponent } from './pages/register-tecnico/register-tecnico.component';
+import { ListCommentsComponent } from './pages/list-comments/list-comments.component';
+import { PostulacionesComponent } from './pages/postulaciones/postulaciones.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { AuthInterceptor } from './services/auth.interceptor';
     NosotrosComponent,
     LoginComponent,
     RegisterComponent,
-   // SibebarComponent,
+    SidebarComponent,
+    ListUsersComponent,
+    RegisterTecnicoComponent,
+    ListCommentsComponent,
+    PostulacionesComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,8 +56,7 @@ import { AuthInterceptor } from './services/auth.interceptor';
     ReactiveFormsModule,
     HeaderModule,
     FooterModule,
-    HttpClientModule
-
+    HttpClientModule,
     
     
   ],

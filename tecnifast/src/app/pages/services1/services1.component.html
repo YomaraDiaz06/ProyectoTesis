@@ -4,51 +4,56 @@
 <div class="row g-6">
     <div class="col-lg-4 col-md-6">
     <h4 class="h2">¿Qué problema tienes con tu equipo?</h4>
-    <li class="text">Seleccione el problema de su equipo, podrá encontrar un listado donde se encuentran
-      los errores mas comunes, en caso de no encontrar el error de su equipo seleccione OTROS.
+    <li class="text">Complete el formulario de la manera mas clara posible los técnicos revisaran la información 
+      y luego podrá visualizar los técnicos que se hayan postulado para resolver su inconveniente deberá elegir 
+      a uno de ellos para poder contactar con el técnico y llegar a un acuerdo. 
     </li>
-    <li class="text">Escriba la descripción de su equipo (marca)</li>
-    <li class="text">Agregar un comentario acerca del daño de su computador</li>
-    <p class="text">Una vez realizados los pasos mensionados anteriormente de clic en enviar, su solicitud será
-      aceptada por uno de nuestros técnicos, él cual se pondrá en contacto con usted para dar una 
-      solución a su requerimiento.
-    </p>
     </div>
      
 
      <div class="col-lg-4 col-md-6">
-    <form>
-    <select class="form-select" aria-label="Default select example">
+    <form [formGroup]="formSolicitud" (ngSubmit)="publicSolicitud()">
+    <select 
+      class="form-select" 
+        type="text" 
+        required="true" 
+        formControlName="dano"
+        aria-label="Default select example" >
         <option class="text" selected>Seleccione una de las opciones</option>
-        <option value="1">El equipo no da video</option>
-        <option value="2">El programa no responde</option>
-        <option value="3">Incompatibilidad de programas con Windows</option>
-        <option value="4">La unidad de CD-ROM, CD-WRITER O DVD-ROM no lee los CD´S</option>
-        <option value="5">Mantenimiento correctivo</option>
-        <option value="6">Antivirus</option>
-        <option value="7">La computadora no arranca (pantalla negra y ningún arranque de Windows) y esta pitando</option>
-        <option value="8">Antivirus</option>
-        <option value="9">El sistema falla después de trabajar un rato</option>
-        <option value="10">La computadora no arranca (pantalla negra y ningún arranque de Windows) y esta pitando</option>
-        <option value="11">El sistema falla después de instalar el hardware y software</option>
-        <option value="12">Word, Excel, power point causan una operación ilegal y se cierran (en el proceso perdiste todo tu trabajo de tus ultimas horas</option>
-        <option value="13">Windows indica que falla un componente del hardware</option>
-        <option value="14">Se escucha ruido en los ventiladores</option>
-        <option value="14">Otros</option>
+        <option value="Pantalla Azul">El equipo no da video</option>
+        <option value="Lentiutud">El programa no responde</option>
+        <option value="No enciende">Incompatibilidad de programas con Windows</option>
+        <option value="No enciende">La unidad de CD-ROM, CD-WRITER O DVD-ROM no lee los CD´S</option>
+        <option value="Lentitud">Mantenimiento correctivo</option>
+        <option value="Lentitud">Antivirus</option>
+        <option value="Pitidos">La computadora no arranca (pantalla negra y ningún arranque de Windows) y esta pitando</option>
+        <option value="Lentiutud">El sistema falla después de trabajar un rato</option>
+        <option value="No enciende">La computadora no arranca (pantalla negra y ningún arranque de Windows) y esta pitando</option>
+        <option value="Lentitud">Word, Excel, power point causan una operación ilegal y se cierran (en el proceso perdiste todo tu trabajo de tus ultimas horas</option>
+        <option value="No enciende">Windows indica que falla un componente del hardware</option>
+        <option value="Pitidos">Se escucha ruido en los ventiladores</option>
+        <option value="Pantalla Azul">Otros</option>
       </select>
       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Descripción del equipo</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label 
+        class="form-control" 
+        >Descripción del equipo</label>
+        <textarea type="text" 
+        required="true" 
+        formControlName="descripcionPC" 
+        id="exampleFormControlTextarea1" 
+        rows="3"></textarea>
       </div>
       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Descripción del problema</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label 
+        >Descripción del problema</label>
+        <textarea required="true" 
+        formControlName="descripcion" 
+        id="exampleFormControlTextarea1" 
+        rows="3"></textarea>
       </div>
-      <button type="button" class="btn btn-primary">Enviar</button>
+      <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
-</div>
-<div class="col-lg-4 col-md-6">
-  <img class= "imagen" src="/assets/imagenes/mantenimiento9.jpg" alt="mantenimiento9" />
 </div>
 </div>
 </div>

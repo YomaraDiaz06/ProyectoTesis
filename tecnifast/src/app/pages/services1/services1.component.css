@@ -5,19 +5,10 @@ background-color: #FB743E;
 .container1{
     margin: 0 auto !important;
     width: 100%;
-    padding: 50px;
-}
-
-.imagen{
-    display:block !important;
-    margin:auto !important;
-    width: 80%;
-    
 }
 
 .col-lg-4{
     margin: 0 auto !important;
-    
 }
 .h1{
   text-align: center;
@@ -28,7 +19,7 @@ background-color: #FB743E;
 }
 .text{
     text-align: justify;
-    padding: 20px;
+    padding: 10px;
     font-family: 'Roboto', 20px;
     line-height : 25px;
 }

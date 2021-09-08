@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,24 +10,48 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
-  resultado!: string;
+  errors=null;
 
 
   myFormUser=new FormGroup({
-    usuarioF: new FormControl('',[Validators.required]),
-      passwordF: new FormControl('',[Validators.required])
+    email: new FormControl('',[Validators.required]),
+      password: new FormControl('',[Validators.required])
 
   })
 
   private formSubmitAttempt: boolean = false;
 
-  constructor(private router:Router) { }
+  constructor(
+    private router:Router,
+    public authService: AuthService
+    ) { }
 
   ngOnInit(): void {
+    this.authService.userAuth().subscribe(
+      result=>{
+        console.log('user', result);
+
+      }
+    );
   }
 
  loginUser(){
-
+   this.authService.signin(this.myFormUser.value).subscribe(
+    result => {
+      console.log('user', result);
+      localStorage.setItem('auth_token', result.token);
+      const role=result.user.role;
+      console.log('role logueado', role);
+      
+      
+    },
+    error => {
+      this.errors = error.error;
+    },
+    ()=>{
+      this.router.navigate(['/information']);
+    }
+   )
   }
 
 

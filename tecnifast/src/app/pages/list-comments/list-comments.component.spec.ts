@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SibebarComponent } from './sibebar.component';
+import { ListCommentsComponent } from './list-comments.component';
 
-describe('SibebarComponent', () => {
-  let component: SibebarComponent;
-  let fixture: ComponentFixture<SibebarComponent>;
+describe('ListCommentsComponent', () => {
+  let component: ListCommentsComponent;
+  let fixture: ComponentFixture<ListCommentsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SibebarComponent ]
+      declarations: [ ListCommentsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SibebarComponent);
+    fixture = TestBed.createComponent(ListCommentsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ROLE, UserInterface } from 'src/app/interfaces/users';
 import { AuthService } from 'src/app/services/auth.service';
+import { GestionuserService } from 'src/app/services/gestionuser.service';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
 })
-export class UsersComponent implements OnInit {
+export class SidebarComponent implements OnInit {
   
   role:ROLE={
     cliente:'',
@@ -31,10 +32,7 @@ export class UsersComponent implements OnInit {
       result=>{
         console.log('user', result);
         this.user.name=result.name;
-        this.user.email=result.email;
         this.user.role=result.role;
-        this.user.id=result.id;
-
       }
     );
   }
