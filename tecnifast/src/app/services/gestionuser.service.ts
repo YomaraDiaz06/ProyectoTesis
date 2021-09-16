@@ -18,16 +18,25 @@ export class User {
 // Solicitud interface
 export class Solicitud {
   descripcionPCQ!:String;
-  fechaIni!:Date;
-  fechaFin!:Date;
   dano!:String;
   descripcion!:String;
+  estado!:String;
 }
 
 // Solicitud interface
 export class Postulacion {
   estado!:String;
   solicitud_id!:Number;
+}
+
+// Solicitud interface
+export class Tecnico {
+  name!: String;
+  email!: String;
+  telefono!: String;
+  descripcion!: String;
+  estudios!: String;
+
 }
 
 @Injectable({
@@ -48,8 +57,16 @@ registerTecnico(user: User): Observable<any> {
   return this.http.post(`${this.URL}/register`, user,{headers: this.headers});
 }
 
+postComments(text: string):Observable<any>{
+  return this.http.post(`${this.URL}/comments`,text,{headers: this.headers})
+}
+
 getAllComents():Observable<any>{
   return this.http.get(`${this.URL}/comments`,{headers: this.headers});
+}
+
+myComents(id: Number):Observable<any>{
+  return this.http.get(`${this.URL}/users/comments/`+id,{headers: this.headers});
 }
 
 solicitarServicio(solicitud: Solicitud):Observable<any>{
@@ -57,12 +74,32 @@ solicitarServicio(solicitud: Solicitud):Observable<any>{
 }
 
 soliSinAsignar():Observable<any>{
-  return this.http.get(`${this.URL}/solicitudes`, {headers: this.headers})
+  return this.http.get(`${this.URL}/solicitud-sin-asignar`, {headers: this.headers})
 }
 
-postularSolicitud():Observable<any>{
-  return this.http.post(`${this.URL}/postulaciones`, {headers: this.headers})
+postularSolicitud(id:Number):Observable<any>{
+
+  var postualacion =new Postulacion();
+  postualacion.estado='Espera';
+  postualacion.solicitud_id=id;
+
+  return this.http.post(`${this.URL}/postulaciones`,  postualacion, {headers: this.headers})
 }
 
+trabajaNosotors(tecnico: Tecnico): Observable<any>{
+  return this.http.post(`${this.URL}/infotecnicos`, tecnico);
+}
+
+mySolicitudes(id: Number): Observable<any>{
+  return this.http.get(`${this.URL}/users/solicitudes/`+id,{headers: this.headers})
+}
+
+myPostulacion(id: Number): Observable<any>{
+  return this.http.get(`${this.URL}/users/postulaciones/`+id,{headers: this.headers})
+}
+
+elegirPostulacion(id: Number):Observable<any>{
+  return this.http.get(`${this.URL}/solicitudes/postulaciones/`+id,{headers: this.headers})
+}
 
 }

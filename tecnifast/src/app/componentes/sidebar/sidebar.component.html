@@ -29,22 +29,31 @@
                 <i class="fas fa-fw fa-cog"></i>Solicitar Servicio
               </a>
             </li>
+
+            <li>
+              <a [routerLink]="['missolicitudes']" routerLinkActive="activo">
+                <i class="fas fa-fw fa-cog"></i>Mis Solicitudes
+              </a>
+            </li>
         </ul>
 
          <!--Sidebar Tecnico-->
          <ul class="list-unstyled components" *ngIf="user.role=='ROLE_TECNICO'">
           <li><a [routerLink]="['resume']" routerLinkActive="activo" >
-                <i class="fas fa-fw fa-user"></i>Perfil
+                Perfil
               </a>
             </li>
-            <li><a [routerLink]="['postulaciones']" >Postulaciones</a>
+            <li><a [routerLink]="['postulaciones']" >Postular</a></li>
+            <li><a [routerLink]="['mispostulaciones']" >Mis Postulaciones</a></li>
+            <li><a [routerLink]="['coments']" >Comentarios</a></li>
 
-            </li>
             <ul>
 
             </ul>
 
         </ul>
+
+       <!----<button (click)="logout()"> Salir</button>--->
 
     </nav>
 
@@ -53,4 +62,8 @@
         <br>
         <router-outlet></router-outlet>
     </div>
+
+    
+    
+    
 </div>

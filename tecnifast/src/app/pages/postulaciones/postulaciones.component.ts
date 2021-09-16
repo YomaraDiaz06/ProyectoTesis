@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GestionuserService } from 'src/app/services/gestionuser.service';
+import { GestionuserService, Solicitud } from 'src/app/services/gestionuser.service';
 
 @Component({
   selector: 'app-postulaciones',
@@ -9,7 +9,8 @@ import { GestionuserService } from 'src/app/services/gestionuser.service';
 export class PostulacionesComponent implements OnInit {
 
   solicitudes= new Array();
-  soli=Object.values(this.solicitudes);
+  id= new Number;
+
   
   constructor(
     private listSolicitudes: GestionuserService,
@@ -28,9 +29,18 @@ export class PostulacionesComponent implements OnInit {
       }
       
     );
-    
-
   }
 
-}
+  postular(id: number ){
+    this.listSolicitudes.postularSolicitud(id).subscribe(
+      resutl=>{
+        console.log(resutl);
+      }
+    )
+  }
 
+
+
+
+
+}

@@ -47,5 +47,9 @@ export class AuthService {
     return this.http.get(`${this.URL}/user`, {headers: this.headers});
   }
 
+  logout(): Observable<any>{
+    return this.http.post(`${this.URL}/logout`,{header: this.headers});
+  }
+
 }
 
