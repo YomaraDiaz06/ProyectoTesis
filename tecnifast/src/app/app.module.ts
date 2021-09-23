@@ -16,7 +16,6 @@ import { FooterModule } from './componentes/footer/footer.module';
 import { PostulationtechnicalComponent } from './pages/postulationtechnical/postulationtechnical.component';
 import { SolutionsComponent } from './pages/solutions/solutions.component';
 import { Services1Component } from './pages/services1/services1.component';
-import { NosotrosComponent } from './nosotros/nosotros.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AuthInterceptor } from './services/auth.interceptor';
@@ -25,6 +24,9 @@ import { ListUsersComponent } from './pages/list-users/list-users.component';
 import { RegisterTecnicoComponent } from './pages/register-tecnico/register-tecnico.component';
 import { ListCommentsComponent } from './pages/list-comments/list-comments.component';
 import { PostulacionesComponent } from './pages/postulaciones/postulaciones.component';
+import { ListSolicitduesComponent } from './pages/list-solicitdues/list-solicitdues.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ListPostulacionesComponent } from './pages/list-postulaciones/list-postulaciones.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,6 @@ import { PostulacionesComponent } from './pages/postulaciones/postulaciones.comp
     PostulationtechnicalComponent,
     SolutionsComponent,
     Services1Component,
-    NosotrosComponent,
     LoginComponent,
     RegisterComponent,
     SidebarComponent,
@@ -45,6 +46,8 @@ import { PostulacionesComponent } from './pages/postulaciones/postulaciones.comp
     RegisterTecnicoComponent,
     ListCommentsComponent,
     PostulacionesComponent,
+    ListSolicitduesComponent,
+    ListPostulacionesComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { PostulacionesComponent } from './pages/postulaciones/postulaciones.comp
     HeaderModule,
     FooterModule,
     HttpClientModule,
+    NgbModule,
     
     
   ],

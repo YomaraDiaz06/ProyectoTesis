@@ -1,0 +1,25 @@
+<h1>Mis Postulaciones</h1>
+
+<button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Postulaciones Asignadas
+</button> 
+<button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Postulaciones Terminadas
+</button> 
+
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Estado de Postulacion</th>
+            <th>ID Tecnico</th>
+            <th>ID Solicitud</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let  postulacion of postulaciones">
+            <td>{{postulacion.estado}}</td>
+            <td>{{postulacion.tecnico_id}}</td>
+            <td>{{postulacion.solicitud_id}}</td>
+    </tbody>
+  
+</table>

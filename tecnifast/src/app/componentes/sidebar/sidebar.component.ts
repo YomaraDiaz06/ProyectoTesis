@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ROLE, UserInterface } from 'src/app/interfaces/users';
 import { AuthService } from 'src/app/services/auth.service';
-import { GestionuserService } from 'src/app/services/gestionuser.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,6 +9,7 @@ import { GestionuserService } from 'src/app/services/gestionuser.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  errors=null;
   
   role:ROLE={
     cliente:'',
@@ -33,8 +33,23 @@ export class SidebarComponent implements OnInit {
         console.log('user', result);
         this.user.name=result.name;
         this.user.role=result.role;
+
       }
     );
+  }
+
+  logout(){
+    this.authService.logout().subscribe(
+      result=>{
+        console.log(result);
+      },
+      error => {
+        this.errors = error.error;
+      },
+      ()=>{
+        this.router.navigate(['/information']);
+      }
+    )
   }
 
 }

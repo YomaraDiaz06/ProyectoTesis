@@ -12,10 +12,9 @@ export class Services1Component implements OnInit {
 
   formSolicitud = new FormGroup({
     descripcionPC: new FormControl ('',[Validators.required, Validators.maxLength(100)]),
-    fechaIni:new FormControl ('2021-09-01',[Validators.required]),
-    fechaFin: new FormControl ('2021-09-01',[Validators.required]),
     dano: new FormControl ('',[Validators.required]),
     descripcion: new FormControl ('',[Validators.required]),
+    estado: new FormControl('Sin Asignar',[Validators.required])
   })
 
   constructor(

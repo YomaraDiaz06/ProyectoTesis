@@ -15,6 +15,8 @@ import { UsersComponent } from './pages/users/users.component';
 import { SidebarComponent } from './componentes/sidebar/sidebar.component';
 import { PostulacionesComponent } from './pages/postulaciones/postulaciones.component';
 import { ListCommentsComponent } from './pages/list-comments/list-comments.component';
+import { ListSolicitduesComponent } from './pages/list-solicitdues/list-solicitdues.component';
+import { ListPostulacionesComponent } from './pages/list-postulaciones/list-postulaciones.component';
 const routes: Routes = [
 
   
@@ -38,7 +40,10 @@ const routes: Routes = [
         {path: 'resume',component:UsersComponent},
         {path: 'servicios', component:Services1Component},
         {path: 'postulaciones',component:PostulacionesComponent},
-        {path: 'miscomentarios', component:ListCommentsComponent}
+        {path: 'miscomentarios', component:ListCommentsComponent},
+        {path: 'missolicitudes', component:ListSolicitduesComponent},
+        {path: 'mispostulaciones', component:ListPostulacionesComponent},
+        {path: 'coments', component:ListCommentsComponent},
 
 
     ],}

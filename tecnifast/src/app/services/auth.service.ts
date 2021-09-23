@@ -24,7 +24,7 @@ export class User {
 
 export class AuthService {
   headers = new HttpHeaders();
-  URL:string="http://127.0.0.1:8000/api";
+  URL:string="https://tecnifast-6c83t.ondigitalocean.app/api";
 
   constructor(
     private http: HttpClient,
@@ -34,17 +34,21 @@ export class AuthService {
 
   // User registration
   register(user: User): Observable<any> {
-    return this.http.post(`${this.URL}/register`, user,{headers: this.headers});
+    return this.http.post(`${this.URL}/register`, user);
   }
 
   // Login
   signin(user: User): Observable<any> {
-    return this.http.post<any>(`${this.URL}/login`, user,{headers: this.headers});
+    return this.http.post<any>(`${this.URL}/login`, user);
   }
 
   // Access user profile
   userAuth(): Observable<any> {
     return this.http.get(`${this.URL}/user`, {headers: this.headers});
+  }
+
+  logout(): Observable<any>{
+    return this.http.post(`${this.URL}/logout`,{header: this.headers});
   }
 
 }

@@ -19,8 +19,6 @@ export class LoginComponent implements OnInit {
 
   })
 
-  private formSubmitAttempt: boolean = false;
-
   constructor(
     private router:Router,
     public authService: AuthService
