@@ -19,7 +19,12 @@
             <td>{{sol.estado}}</td>
             <td class="bnt-group d-none d-sm-block" role="group">
               <!-- Button open modal -->
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="postulacionSoli(sol.id);open(contenido)">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
+                *ngIf="sol.estado === 'Asignado'||'Terminado'"  (click)="postulacionSoliAsig(sol.id);open(contenido)">
+                    Ver Postulaciones
+                </button>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
+                *ngIf="sol.estado === 'Sin Asignar'"  (click)="postulacionSoli(sol.id);open(contenido)">
                     Ver Postulaciones
                 </button>  
             </td>

@@ -25,6 +25,7 @@ export class ListSolicitduesComponent implements OnInit {
 
   solicitudes= new Array();
   postulaciones= new Array();
+  id= new Number;
   closeResult='';
   
   constructor(
@@ -42,16 +43,16 @@ export class ListSolicitduesComponent implements OnInit {
       }
     );
 
-    
-
   }
+
+
 
   solicitudUser(id: number){
       this.usuarios.mySolicitudes(id).subscribe(
         data=>{
           console.log(data);
           this.solicitudes = data.data;
-          console.log('arreglo', this.solicitudes);
+          console.log('solicitudes', this.solicitudes);
         }
       )
   }
@@ -65,6 +66,21 @@ export class ListSolicitduesComponent implements OnInit {
         
       }
     )
+  }
+  postulacionSoliAsig(id: number){
+    this.usuarios.postulacionAsig(id).subscribe(
+      data=>{
+        console.log(data);
+        this.postulaciones = data.data;
+        console.log('postulacion asignada', this.postulaciones);      
+        
+      }
+    )
+
+  }
+
+  onClick(currentEstado: string, id: number){
+    currentEstado === 'Asignado'||'Terminado' ? this.postulacionSoliAsig(id) : this.postulacionSoli(id) ; 
   }
 
   open(content: any) {
