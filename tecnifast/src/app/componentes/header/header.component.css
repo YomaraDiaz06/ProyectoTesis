@@ -3,6 +3,7 @@
   background-color:#9FB8AD;
   padding: bottom 30px;
   font-family:'Source Sans Pro', sans-serif;
+  width: 100%;
 }
 
 .header-blue .navbar {
@@ -131,3 +132,10 @@
 .imagen{
   width: 60px !important;
 }
+
+.header-blue .navbar .navbar-collapse .login{
+  align-items: left;
+
+}
+
+

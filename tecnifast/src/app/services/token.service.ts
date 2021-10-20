@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class TokenService {
     register: 'http://127.0.0.1:8000/api/register'
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   handleData(token: string){
     localStorage.setItem('auth_token', token);
@@ -30,12 +31,16 @@ export class TokenService {
        const payload = this.payload(token);
        if(payload){
          respuesta= Object.values(this.issuer).indexOf(payload.iss) > -1 ? true : false;
+         console.log(respuesta);
        }
      } else {
         respuesta= false;
+        console.log(respuesta);
      }
 
      return respuesta;
+     
+     
   }
 
   payload(token: string) {
@@ -51,6 +56,7 @@ export class TokenService {
   // Remove token
   removeToken(){
     localStorage.removeItem('auth_token');
+    this.router.navigate(['/']);
   }
 
 }

@@ -1,1 +1,36 @@
-<p>register-tecnico works!</p>
+<form [formGroup]="signUpForm" (ngSubmit)="register()">
+    <h3 class="box-title m-b-20">Registro de Técnico</h3>
+    <div class="form-group">
+      <div class="col-xs-12">
+        <input class="form-control mb-2" type="text" required="true" placeholder="Nombre"
+          formControlName="name">
+
+      </div>
+      <div class="col-xs-12">
+        <input class="form-control mb-2" type="email" required="true" placeholder="Email"
+          formControlName="email">
+
+      </div>
+    </div>
+    <div class="form-group ">
+      <div class="col-xs-12">
+        <input class="form-control mb-2" type="password" required="true" placeholder="Contraseña"
+          formControlName="password" minlength="6">
+
+      </div>
+    </div>
+    <div class="form-group ">
+      <div class="col-xs-12">
+        <input class="form-control mb-2" type="password" required="true"
+          placeholder="Repita su Contraseña" formControlName="password_confirmation" minlength="6">
+
+      </div>
+    </div>
+
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-primary mt-4 btn-registrarse">
+        <h6><strong>Registrarse</strong></h6>
+      </button>
+    </div>
+    <br>
+  </form>

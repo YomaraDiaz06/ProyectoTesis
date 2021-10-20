@@ -79,10 +79,10 @@ export class ListSolicitduesComponent implements OnInit {
 
   }
 
-  onClick(currentEstado: string, id: number){
-    currentEstado === 'Asignado'||'Terminado' ? this.postulacionSoliAsig(id) : this.postulacionSoli(id) ; 
-  }
 
+
+
+  //Modal
   open(content: any) {
     this.ngModal.open(content,{size: 'md'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;

@@ -1,7 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { ROLE, UserInterface } from 'src/app/interfaces/users';
 import { AuthService } from 'src/app/services/auth.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-header',
@@ -19,20 +20,36 @@ export class HeaderComponent implements OnInit {
     name:'',
     role:this.role,
   }
+  isLogin = new Boolean;
+  errors=null;
 
   constructor(
     private router:Router,
     public authService: AuthService,
+    private token: TokenService,
   ) { }
 
   ngOnInit(): void {
     this.authService.userAuth().subscribe(
       result=>{
         console.log('user', result);
-        const name = result.name;
-        const role = result.role;
-      }
+        this.user.name=result.name;
+        this.isLogin = true;
+        console.log(this.isLogin);
+        
+      },
+      error => {
+        this.errors = error.error;
+        this.isLogin=false;
+        console.log(this.isLogin);
+      },     
+
     );
+    }
+
+    logout(){
+      this.token.removeToken();
+      console.log('desconectado')
     }
 }
 
