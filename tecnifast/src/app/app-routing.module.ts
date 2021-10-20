@@ -17,6 +17,8 @@ import { PostulacionesComponent } from './pages/postulaciones/postulaciones.comp
 import { ListCommentsComponent } from './pages/list-comments/list-comments.component';
 import { ListSolicitduesComponent } from './pages/list-solicitdues/list-solicitdues.component';
 import { ListPostulacionesComponent } from './pages/list-postulaciones/list-postulaciones.component';
+import { RegisterTecnicoComponent } from './pages/register-tecnico/register-tecnico.component';
+import { ListUsersComponent } from './pages/list-users/list-users.component';
 const routes: Routes = [
 
   
@@ -44,6 +46,8 @@ const routes: Routes = [
         {path: 'missolicitudes', component:ListSolicitduesComponent},
         {path: 'mispostulaciones', component:ListPostulacionesComponent},
         {path: 'coments', component:ListCommentsComponent},
+        {path: 'registrar-tecnico', component:RegisterTecnicoComponent},
+        {path: 'lista-usuarios', component:ListUsersComponent},
 
 
     ],}

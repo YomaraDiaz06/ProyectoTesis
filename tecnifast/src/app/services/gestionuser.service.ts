@@ -46,11 +46,12 @@ export class Tecnico {
 export class GestionuserService {
 
   headers = new HttpHeaders();
-  URL:string="https://tecnifast-6c83t.ondigitalocean.app/api";
-
+  //URL:string="https://tecnifast-6c83t.ondigitalocean.app/api";
+  URL:string="http://127.0.0.1:8000/api";
+  
   constructor( private http: HttpClient,
     ) { 
-  this.headers.append("Authorization", "Bearer"+ localStorage.getItem("token"));
+  this.headers.append("Authorization", "Bearer"+ localStorage.getItem("auth_token"));
 }
 
 registerTecnico(user: User): Observable<any> {
@@ -106,4 +107,11 @@ trabajaNosotors(tecnico: Tecnico): Observable<any>{
   return this.http.post(`${this.URL}/infotecnicos`, tecnico);
 }
 
+listCliente(): Observable<any>{
+  return this.http.get(`${this.URL}/user-cliente`,{headers: this.headers})
+}
+
+listTecnico(): Observable<any>{
+  return this.http.get(`${this.URL}/user-tecnico`,{headers: this.headers})
+}
 }
