@@ -36,6 +36,7 @@ export class Tecnico {
   telefono!: String;
   descripcion!: String;
   estudios!: String;
+  estado!: String;
 
 }
 
@@ -113,5 +114,9 @@ listCliente(): Observable<any>{
 
 listTecnico(): Observable<any>{
   return this.http.get(`${this.URL}/user-tecnico`,{headers: this.headers})
+}
+
+listPostulacionTecnicos(): Observable<any>{
+  return this.http.get(`${this.URL}/tecnico-sin-registrar`,{headers: this.headers})
 }
 }

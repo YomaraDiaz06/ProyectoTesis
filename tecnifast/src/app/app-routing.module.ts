@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
+import { CheckloginGuard } from './services/checklogin.guard';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { InformationComponent } from './pages/information/information.component'; 
-import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { PagesComponent } from './pages/pages.component';
 import { ContactanosComponent } from './pages/contactanos/contactanos.component';
 import { PostulationtechnicalComponent } from './pages/postulationtechnical/postulationtechnical.component';
@@ -19,11 +18,13 @@ import { ListSolicitduesComponent } from './pages/list-solicitdues/list-solicitd
 import { ListPostulacionesComponent } from './pages/list-postulaciones/list-postulaciones.component';
 import { RegisterTecnicoComponent } from './pages/register-tecnico/register-tecnico.component';
 import { ListUsersComponent } from './pages/list-users/list-users.component';
+import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+
 const routes: Routes = [
 
-  
-  {path: 'login',    component: LoginComponent},
-  {path: 'register',    component: RegisterComponent},
+  { path: 'login',    component: LoginComponent},
+  { path: 'register',    component: RegisterComponent},
+  { path: 'reset-password',    component: ResetPasswordComponent},
   { path: '', redirectTo: '/information', pathMatch: 'full' },
   
   
@@ -50,7 +51,7 @@ const routes: Routes = [
         {path: 'lista-usuarios', component:ListUsersComponent},
 
 
-    ],}
+    ],canActivate: [CheckloginGuard] },
     
   ],
   },

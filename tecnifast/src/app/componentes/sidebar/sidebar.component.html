@@ -6,7 +6,7 @@
         </div>
 
         <!--Sidebar administrador-->
-        <ul class="list-unstyled components" *ngIf="user.role=='ROLE_ADMIN'">
+        <ul class="list-unstyled components" *ngIf="user.role=='ADMINISTRADOR'">
           <li><a [routerLink]="['resume']" routerLinkActive="activo" >
             <i class="fas fa-fw fa-user"></i>Perfil
           </a></li>
@@ -16,22 +16,14 @@
               </a>
             </li>
             <li>
-              <a [routerLink]="['registrar-tecnico']" routerLinkActive="activo">
+              <a [routerLink]="['lista-usuarios']" routerLinkActive="activo">
                 Ver usuarios
               </a>
-              <ul class="list-unstyled components">
-                <li [routerLink]="['registrar-tecnico']" routerLinkActive="activo">
-                  <a>Tecnicos</a>
-                </li>
-                <li [routerLink]="['registrar-tecnico']" routerLinkActive="activo">
-                  <a>Clientes</a>
-                </li>
-              </ul>
             </li>
         </ul>
 
          <!--Sidebar cliente-->
-         <ul class="list-unstyled components" *ngIf="user.role=='ROLE_CLIENTE'">
+         <ul class="list-unstyled components" *ngIf="user.role=='CLIENTE'">
             <li><a [routerLink]="['resume']" routerLinkActive="activo" >
                 <i class="fas fa-fw fa-user"></i>Perfil
               </a></li>
@@ -50,7 +42,7 @@
         </ul>
 
          <!--Sidebar Tecnico-->
-         <ul class="list-unstyled components" *ngIf="user.role=='ROLE_TECNICO'">
+         <ul class="list-unstyled components" *ngIf="user.role=='TECNICO'">
           <li><a [routerLink]="['resume']" routerLinkActive="activo" >
                 Perfil
               </a>
