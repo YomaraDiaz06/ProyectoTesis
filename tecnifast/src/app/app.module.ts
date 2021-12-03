@@ -27,6 +27,8 @@ import { PostulacionesComponent } from './pages/postulaciones/postulaciones.comp
 import { ListSolicitduesComponent } from './pages/list-solicitdues/list-solicitdues.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListPostulacionesComponent } from './pages/list-postulaciones/list-postulaciones.component';
+import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { ListPostulacionesComponent } from './pages/list-postulaciones/list-post
     PostulacionesComponent,
     ListSolicitduesComponent,
     ListPostulacionesComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

@@ -24,7 +24,7 @@ export class SidebarComponent implements OnInit {
 
   constructor(
     private router:Router,
-    public authService: AuthService
+    public authService: AuthService,
   ) { }
 
   ngOnInit(): void {
@@ -47,7 +47,7 @@ export class SidebarComponent implements OnInit {
         this.errors = error.error;
       },
       ()=>{
-        this.router.navigate(['/information']);
+        this.router.navigate(['/']);
       }
     )
   }

@@ -1,4 +1,14 @@
-<h1>Solicitudes sin Asignacion</h1>  
+<h1>Solicitudes Sin Asignacion</h1>  
+
+    <button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="solicitudUser(idUser)">
+        Postulaciones Sin Asignacion
+    </button> 
+    <button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="solicitudUserAsing(idUser)">
+        Postulaciones Asignadas
+    </button> 
+    <button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="solicitudUserTerminada(idUser)">
+        Postulaciones Terminadas
+    </button> 
 
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
@@ -20,11 +30,7 @@
             <td class="bnt-group d-none d-sm-block" role="group">
               <!-- Button open modal -->
                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
-                *ngIf="sol.estado === 'Asignado'||'Terminado'"  (click)="postulacionSoliAsig(sol.id);open(contenido)">
-                    Ver Postulaciones
-                </button>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
-                *ngIf="sol.estado === 'Sin Asignar'"  (click)="postulacionSoli(sol.id);open(contenido)">
+                (click)="postulacionSoliAsig(sol.id);open(contenido)">
                     Ver Postulaciones
                 </button>  
             </td>

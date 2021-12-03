@@ -1,36 +1,87 @@
-<form [formGroup]="signUpForm" (ngSubmit)="register()">
-    <h3 class="box-title m-b-20">Registro de Técnico</h3>
-    <div class="form-group">
-      <div class="col-xs-12">
-        <input class="form-control mb-2" type="text" required="true" placeholder="Nombre"
-          formControlName="name">
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="signUpForm" (ngSubmit)="register()">
+        <h3 class="box-title m-b-20">Registro de Técnico</h3>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input
+              class="form-control mb-2"
+              type="text"
+              required="true"
+              placeholder="Nombre"
+              formControlName="name"
+            />
+          </div>
+          <div class="col-xs-12">
+            <input
+              class="form-control mb-2"
+              type="email"
+              required="true"
+              placeholder="Email"
+              formControlName="email"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input
+              class="form-control mb-2"
+              type="password"
+              required="true"
+              placeholder="Contraseña"
+              formControlName="password"
+              minlength="6"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input
+              class="form-control mb-2"
+              type="password"
+              required="true"
+              placeholder="Repita su Contraseña"
+              formControlName="password_confirmation"
+              minlength="6"
+            />
+          </div>
+        </div>
 
-      </div>
-      <div class="col-xs-12">
-        <input class="form-control mb-2" type="email" required="true" placeholder="Email"
-          formControlName="email">
-
-      </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary mt-4 btn-registrarse">
+            <h6><strong>Registrarse</strong></h6>
+          </button>
+        </div>
+        <br />
+      </form>
     </div>
-    <div class="form-group ">
-      <div class="col-xs-12">
-        <input class="form-control mb-2" type="password" required="true" placeholder="Contraseña"
-          formControlName="password" minlength="6">
-
-      </div>
+    <div class="col">
+      <h3 class="box-title m-b-20">Técnicos sin Registrar </h3>
+      <table
+        class="table table-bordered"
+        id="dataTable"
+        width="100%"
+        cellspacing="0"
+      >
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Estudios</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let  postulacion of postulaciones">
+            <td>{{postulacion.id}}</td>
+            <td>{{postulacion.name}}</td>
+            <td>{{postulacion.email}}</td>
+            <td>{{postulacion.estudios}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="form-group ">
-      <div class="col-xs-12">
-        <input class="form-control mb-2" type="password" required="true"
-          placeholder="Repita su Contraseña" formControlName="password_confirmation" minlength="6">
-
-      </div>
-    </div>
-
-    <div class="d-grid gap-2">
-      <button type="submit" class="btn btn-primary mt-4 btn-registrarse">
-        <h6><strong>Registrarse</strong></h6>
-      </button>
-    </div>
-    <br>
-  </form>
+  </div>
+</div>

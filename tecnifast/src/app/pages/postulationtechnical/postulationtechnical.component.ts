@@ -17,7 +17,8 @@ export class PostulationtechnicalComponent implements OnInit {
     telefono: new FormControl ('',[Validators.required]),
     descripcion: new FormControl('',[Validators.required]),
     direccion: new FormControl('',[Validators.required]),
-    estudios: new FormControl('',[Validators.required])
+    estudios: new FormControl('',[Validators.required]),
+    estado: new FormControl('Sin Registrar',[Validators.required])
   })
   constructor(
     private usuarios: GestionuserService,

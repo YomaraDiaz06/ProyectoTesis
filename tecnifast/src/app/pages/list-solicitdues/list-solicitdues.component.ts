@@ -25,7 +25,7 @@ export class ListSolicitduesComponent implements OnInit {
 
   solicitudes= new Array();
   postulaciones= new Array();
-  id= new Number;
+  idUser= 0;
   closeResult='';
   
   constructor(
@@ -39,6 +39,7 @@ export class ListSolicitduesComponent implements OnInit {
       result=>{
         console.log('user', result);
         this.user.id=result.id;
+        this.idUser = result.id;
         this.solicitudUser(result.id);
       }
     );
@@ -47,15 +48,41 @@ export class ListSolicitduesComponent implements OnInit {
 
 
 
-  solicitudUser(id: number){
-      this.usuarios.mySolicitudes(id).subscribe(
+  solicitudUser(idUser: number){
+      this.usuarios.mySolicitudes(idUser).subscribe(
         data=>{
           console.log(data);
           this.solicitudes = data.data;
-          console.log('solicitudes', this.solicitudes);
+          let sinAsign = this.solicitudes.filter(solicitud => solicitud.estado == "Sin Asignar");
+          this.solicitudes = sinAsign;
+          console.log('solicitudes', sinAsign);
         }
       )
   }
+
+  solicitudUserAsing(idUser: number){
+    this.usuarios.mySolicitudes(idUser).subscribe(
+      data=>{
+        console.log(data);
+        this.solicitudes = data.data;
+        let asign = this.solicitudes.filter(solicitud => solicitud.estado == "Asignado");
+        this.solicitudes = asign;
+        console.log('solicitudes', asign);
+      }
+    )
+}
+
+solicitudUserTerminada(idUser: number){
+  this.usuarios.mySolicitudes(idUser).subscribe(
+    data=>{
+      console.log(data);
+      this.solicitudes = data.data;
+      let terminada = this.solicitudes.filter(solicitud => solicitud.estado == "Terminada");
+      this.solicitudes = terminada;
+      console.log('solicitudes', terminada);
+    }
+  )
+}
 
   postulacionSoli(id: number){
     this.usuarios.elegirPostulacion(id).subscribe(
@@ -78,9 +105,6 @@ export class ListSolicitduesComponent implements OnInit {
     )
 
   }
-
-
-
 
   //Modal
   open(content: any) {
